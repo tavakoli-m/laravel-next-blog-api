@@ -1,6 +1,5 @@
 <?php
 
-use App\Base\ApiResponse\Facades\ApiResponse;
 use App\Http\Controllers\V1\Admin\Content\CategoryController;
 use App\Http\Controllers\V1\Auth\GetMeController;
 use App\Http\Controllers\V1\Auth\LoginController;

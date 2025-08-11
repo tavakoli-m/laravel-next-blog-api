@@ -1,6 +1,7 @@
 <?php
 
 use App\Base\ApiResponse\Facades\ApiResponse;
+use App\Http\Middleware\RequireJsonHeader;
 use Illuminate\Foundation\Application;
 use Illuminate\Foundation\Configuration\Exceptions;
 use Illuminate\Foundation\Configuration\Middleware;
@@ -23,7 +24,9 @@ return Application::configure(basePath: dirname(__DIR__))
         }
     )
     ->withMiddleware(function (Middleware $middleware): void {
-        //
+        $middleware->api(prepend: [
+            RequireJsonHeader::class
+        ]);
     })
     ->withExceptions(function (Exceptions $exceptions): void {
         // 422 status code

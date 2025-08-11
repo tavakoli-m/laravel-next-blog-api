@@ -1,6 +1,7 @@
 <?php
 
 use App\Base\ApiResponse\Facades\ApiResponse;
+use App\Http\Controllers\V1\Auth\RegisterController;
 use Illuminate\Support\Facades\Route;
 
-Route::get('/',fn() => ApiResponse::send());
+Route::post('/register',RegisterController::class);

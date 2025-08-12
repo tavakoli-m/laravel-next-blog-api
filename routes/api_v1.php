@@ -7,6 +7,7 @@ use App\Http\Controllers\V1\Auth\LoginController;
 use App\Http\Controllers\V1\Auth\LogoutController;
 use App\Http\Controllers\V1\Auth\RegisterController;
 use App\Http\Controllers\V1\Customer\CategoryController as CustomerCategoryController;
+use App\Http\Controllers\V1\Customer\CategoryPostsListController;
 use App\Http\Controllers\V1\Customer\PostController as CustomerPostController;
 use Illuminate\Support\Facades\Route;
 
@@ -20,3 +21,4 @@ Route::apiResource('/post', PostController::class)->middleware('auth:sanctum');
 
 Route::get('/categories',CustomerCategoryController::class);
 Route::get('/posts',CustomerPostController::class);
+Route::get('/categories/{category}/posts',CategoryPostsListController::class);

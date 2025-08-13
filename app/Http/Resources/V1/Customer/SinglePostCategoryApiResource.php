@@ -5,7 +5,7 @@ namespace App\Http\Resources\V1\Customer;
 use Illuminate\Http\Request;
 use Illuminate\Http\Resources\Json\JsonResource;
 
-class SinglePostApiResource extends JsonResource
+class SinglePostCategoryApiResource extends JsonResource
 {
     /**
      * Transform the resource into an array.
@@ -16,11 +16,7 @@ class SinglePostApiResource extends JsonResource
     {
         return [
             'id' => $this->id,
-            'title' => $this->title,
-            'body' => $this->body,
-            'image' => $this->image,
-            'category' => new SinglePostCategoryApiResource($this->category),
-            'created_at' => $this->created_at,
+            'name' => $this->name
         ];
     }
 }
